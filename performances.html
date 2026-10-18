@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Performances | Dance Bochette · Fort Myers</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f6f1ea;color:#231a1c;font-family:'Hanken Grotesk',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#5c1525;text-decoration:none}
+a:hover{color:#231a1c}
+*{box-sizing:border-box;font-optical-sizing:none}
+</style>
+</helmet>
+<div id="top" style="min-height:100vh;background:#f6f1ea">
+<dc-import name="SiteHeader" active="performances" style="position:sticky;top:0;z-index:20" hint-size="100%,82px"></dc-import>
+
+<section style="background:#231a1c;color:#f6f1ea">
+<div style="max-width:1320px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,6vw,88px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:26px">
+<div style="display:flex;align-items:center;gap:14px;font-size:13px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:#c9a86a"><span style="width:40px;height:1px;background:#c9a86a"></span>Performances</div>
+<h1 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(48px,7vw,100px);line-height:0.96;letter-spacing:-0.025em;text-wrap:balance">Classics, staged <em style="color:#c9a86a">our own way.</em></h1>
+<p style="margin:0;font-size:17px;line-height:1.75;color:#f1e9df;max-width:52ch;text-wrap:pretty">Our performances showcase a year of progress and invite creative thinking, risk-taking and choreographic innovation. We reproduce ballet classics — sometimes true to traditional staging, sometimes with a unique spin — and often invite students' ideas, giving them real ownership of their work.</p>
+</div>
+<img src="https://www.dancebochette.com/wp-content/uploads/2026/01/Dance2013-51.png" alt="Dance Bochette performance" style="width:100%;max-width:440px;justify-self:center;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:4px;background:#3a2e30;filter:grayscale(1) contrast(1.06);">
+</div>
+</section>
+
+<section style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,128px) clamp(20px,4vw,48px) 0;display:flex;flex-direction:column;gap:clamp(56px,7vw,104px)">
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;border-bottom:1px solid #231a1c;padding-bottom:20px">
+<h2 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(36px,4.4vw,60px);line-height:1">Repertoire</h2>
+<span style="font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:#4a3d3e">Selected year-end productions</span>
+</div>
+<sc-for list="{{ shows }}" as="s" hint-placeholder-count="5">
+<article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(28px,5vw,72px);align-items:center">
+<img src="{{ s.img }}" alt="{{ s.title }}" style="width:100%;max-width:440px;justify-self:center;aspect-ratio:3/2;object-fit:cover;display:block;border-radius:4px;background:#e3d9cd;filter:grayscale(1) contrast(1.06);">
+<div style="display:flex;flex-direction:column;gap:16px">
+<span style="font-family:'Bodoni Moda',serif;font-size:clamp(40px,4vw,56px);line-height:1;color:#5c1525">{{ s.year }}</span>
+<h3 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-style:italic;font-size:clamp(28px,2.8vw,40px);line-height:1.1">{{ s.title }}</h3>
+<p style="margin:0;font-size:17px;line-height:1.75;color:#231a1c;max-width:52ch;text-wrap:pretty">{{ s.text }}</p>
+</div>
+</article>
+</sc-for>
+</section>
+
+<section style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,48px)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(24px,3vw,40px)">
+<div style="background:#efe7dc;border-radius:4px;padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;gap:18px">
+<img src="https://www.dancebochette.com/wp-content/uploads/2026/03/Leading-Orange-Bowl-Parade.jpg" alt="Leading the Orange Bowl Parade" style="width:100%;max-width:440px;justify-self:center;aspect-ratio:16/10;object-fit:cover;display:block;border-radius:2px;background:#e3d9cd;filter:grayscale(1) contrast(1.06);">
+<h3 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(26px,2.4vw,34px)">Community performances</h3>
+<p style="margin:0;font-size:16px;line-height:1.7;color:#231a1c;text-wrap:pretty">Annual events such as Fort Myers' ArtFest and local parades reinforce our longstanding community ties and give students more time on stage.</p>
+</div>
+<div style="background:#efe7dc;border-radius:4px;padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;gap:18px">
+<img src="https://www.dancebochette.com/wp-content/uploads/2026/03/holiday-show.jpeg" alt="Holiday show" style="width:100%;max-width:440px;justify-self:center;aspect-ratio:16/10;object-fit:cover;display:block;border-radius:2px;background:#e3d9cd;filter:grayscale(1) contrast(1.06);">
+<h3 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(26px,2.4vw,34px)">Holiday shows</h3>
+<p style="margin:0;font-size:16px;line-height:1.7;color:#231a1c;text-wrap:pretty">Informal showings that serve as a mid-year checkpoint on students' progress — and our way of sharing a little holiday cheer.</p>
+</div>
+</div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const u = 'https://www.dancebochette.com/wp-content/uploads/2026/';
+    return {
+      shows: [
+        { year: '2025', title: 'Sleeping Beauty', img: u + '03/Students-perform-Sleeping-Beauty-2025-1.jpeg', text: 'Our performers have tackled this classic, set to Tchaikovsky\u2019s beloved score, many times over the years — each cast bringing its own energy and personality to the stage.' },
+        { year: '2023', title: 'Copp\u00e9lia', img: u + '02/Copeland-Suite_-2023.jpeg', text: 'A beautiful score with a long, complicated story. Our production reinvented it as a hybrid of oral storytelling, mime and dance, with students helping craft the opening sequence.' },
+        { year: '2021', title: 'VIBE!', img: u + '03/VIBE-primary-image.jpg', text: 'A suite of dances set to anthems of the 1960s and \u201970s, celebrating the community\u2019s re-emergence after COVID-19. Performed outdoors — all about joy, reconnection and the strength of the human spirit.' },
+        { year: '2019', title: 'Dreams', img: u + '03/Dreams.jpeg', text: 'Each class level defined what \u201cDreams\u201d meant to them, and teachers choreographed from their answers — from magical creatures to nightmares to aspirations.' },
+        { year: '2016', title: 'Alice\u2019s Adventures', img: u + '03/Alice-in-Wonderland-2015.jpeg', text: 'Our first story-length ballet tailored to our own students. Whimsical and surreal, it opened new possibilities for how we conceive and create year-end performances.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

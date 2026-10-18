@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Classes | Dance Bochette · Dance Classes for All Ages in Fort Myers</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f6f1ea;color:#231a1c;font-family:'Hanken Grotesk',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#5c1525;text-decoration:none}
+a:hover{color:#231a1c}
+*{box-sizing:border-box;font-optical-sizing:none}
+html{scroll-behavior:smooth}
+</style>
+</helmet>
+<div id="top" style="min-height:100vh;background:#f6f1ea">
+<dc-import name="SiteHeader" active="classes" style="position:sticky;top:0;z-index:20" hint-size="100%,82px"></dc-import>
+
+<section style="max-width:1320px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(20px,4vw,48px) clamp(40px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(32px,5vw,72px);align-items:end">
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;align-items:center;gap:14px;font-size:13px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:#5c1525"><span style="width:40px;height:1px;background:#5c1525"></span>Classes for every age</div>
+<h1 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(48px,7vw,104px);line-height:0.96;letter-spacing:-0.025em;text-wrap:balance">Children, teens <em style="color:#5c1525">&amp; adults.</em></h1>
+</div>
+<p style="margin:0;font-size:17px;line-height:1.75;color:#231a1c;max-width:52ch;text-wrap:pretty">From creative movement for our youngest dancers to advanced pointe work, our progressive ballet program follows the respected Cecchetti method. Beyond ballet we offer acrobatics, tap, jazz, modern, lyrical and hip-hop — each class grounded in proper technique, anatomical awareness, and the joy of movement.</p>
+</section>
+
+<div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+<nav style="display:flex;gap:10px;flex-wrap:wrap;padding:20px 0;border-top:1px solid #231a1c;border-bottom:1px solid #d6c9ba">
+<sc-for list="{{ groups }}" as="g" hint-placeholder-count="4">
+<a href="#{{ g.id }}" style="border:1px solid #d6c9ba;color:#231a1c;padding:9px 18px;border-radius:999px;font-size:14px" style-hover="background:#231a1c;color:#f6f1ea;border-color:#231a1c">{{ g.title }}</a>
+</sc-for>
+</nav>
+</div>
+
+<sc-for list="{{ groups }}" as="g" hint-placeholder-count="4">
+<section id="{{ g.id }}" style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(32px,5vw,72px);align-items:start;scroll-margin-top:90px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<span style="font-family:'Bodoni Moda',serif;font-style:italic;font-size:18px;color:#4a3d3e">{{ g.n }}</span>
+<h2 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(36px,4vw,56px);line-height:1.02;letter-spacing:-0.02em">{{ g.title }}</h2>
+<img src="{{ g.img }}" alt="{{ g.title }}" style="width:100%;max-width:360px;justify-self:center;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:4px;background:#e3d9cd;filter:grayscale(1) contrast(1.06);">
+</div>
+<div style="border-top:1px solid #231a1c">
+<sc-for list="{{ g.items }}" as="c" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:10px;padding:26px 0;border-bottom:1px solid #d6c9ba">
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap">
+<h3 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(22px,2vw,28px)">{{ c.name }}</h3>
+<span style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#5c1525">{{ c.tag }}</span>
+</div>
+<p style="margin:0;font-size:16px;line-height:1.7;color:#231a1c;max-width:62ch;text-wrap:pretty">{{ c.desc }}</p>
+</div>
+</sc-for>
+</div>
+</section>
+</sc-for>
+
+<section style="max-width:1320px;margin:clamp(72px,9vw,128px) auto 0;padding:0 clamp(20px,4vw,48px) clamp(64px,9vw,128px)">
+<div style="background:#5c1525;color:#f6f1ea;border-radius:4px;padding:clamp(40px,6vw,80px);display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap">
+<div style="display:flex;flex-direction:column;gap:14px;max-width:560px">
+<h2 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(34px,4vw,54px);line-height:1.04">Classes fill quickly.</h2>
+<p style="margin:0;font-size:17px;line-height:1.7;color:#ffffff">Not sure which level is right? Call the studio and we'll help you find the right class.</p>
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<a href="https://app.gostudiopro.com/online/dancebochette" style="background:#f6f1ea;color:#5c1525;padding:16px 30px;border-radius:999px;font-weight:600;font-size:15px" style-hover="background:#231a1c;color:#f6f1ea">Register online</a>
+<a href="tel:2393343274" style="border:1px solid #f6f1ea;color:#f6f1ea;padding:16px 30px;border-radius:999px;font-weight:500;font-size:15px" style-hover="background:#f6f1ea;color:#5c1525">(239) 334-3274</a>
+</div>
+</div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const u = 'https://www.dancebochette.com/wp-content/uploads/';
+    return {
+      groups: [
+        { id: 'ballet', n: 'i.', title: 'Ballet', img: u + '2026/03/ballet.jpg', items: [
+          { name: 'Ballet 1', tag: 'Children · Beginner', desc: 'Building on our creative movement program, young dancers take their first steps in classical ballet. May be paired with beginner acrobatics and/or beginner tap.' },
+          { name: 'Ballet 1/2 & Acro', tag: 'Children', desc: 'Progresses children in their ballet training, finishing with acrobatic and strength-building exercises.' },
+          { name: 'Ballet 2/3', tag: 'Beginner–Intermediate', desc: 'Alignment, movement mechanics, and the fundamentals of ballet technique. Classical barre, with centre work in port de bras, positions, turns, jumps and combinations.' },
+          { name: 'Ballet / Pointe', tag: 'Intermediate–Advanced', desc: 'For dancers with a strong ballet foundation: refining technique, building strength, and transitioning into pointe work.' },
+          { name: 'Advanced Ballet', tag: 'Advanced', desc: 'Taught in the Cuban/Vaganova tradition, with complex combinations and rigorous demands in preparation for performance, competitions, college study and dance careers.' },
+          { name: 'Teen / Adult Ballet', tag: 'Teens & Adults', desc: 'For adults with prior training and teens building their foundations. A full range of barre and centre work — adagio, jumps, turns — modified to individual needs.' }
+        ]},
+        { id: 'acro', n: 'ii.', title: 'Acrobatics & Conditioning', img: u + '2026/02/Barre.jpg', items: [
+          { name: 'Acrobatics', tag: 'Children', desc: 'Conditioning, upper body strength, coordination, inversions, cartwheels, bridges and partner balances.' },
+          { name: 'Alignment & Conditioning', tag: 'Advanced dancers', desc: 'Pilates, yoga, Laban/Bartenieff fundamentals, stretch and release, HIIT and therapeutic barre — to build strength, improve alignment and prevent injury.' }
+        ]},
+        { id: 'tapjazz', n: 'iii.', title: 'Tap & Jazz', img: u + '2026/02/CR1A9774-SrTap-3-2025.png', items: [
+          { name: 'Tap Basics', tag: 'Beginner', desc: 'Specialized shoes and the core steps of tap — tap, flap, shuffle, dig, stomp-stamp and ball change.' },
+          { name: 'Junior Tap', tag: 'Intermediate', desc: 'Builds on prior knowledge with more complex sounds, movements and combinations.' },
+          { name: 'Senior Tap', tag: 'Advanced', desc: 'Advanced tap technique. A strong knowledge of tap terminology and technique is required.' },
+          { name: 'Jazz', tag: 'Intermediate–Advanced', desc: 'A range of jazz techniques and choreographers, including Broadway style, Fosse, Luigi and Giordano.' }
+        ]},
+        { id: 'modern', n: 'iv.', title: 'Modern, Lyrical & Hip-Hop', img: u + '2026/02/ModernKids-2018.jpg', items: [
+          { name: 'Modern / Acro', tag: 'Foundations', desc: 'Classic modern technique — use of the torso, contract and release, fall and recovery, planes of movement, shape study and improvisation — with basic acrobatics.' },
+          { name: 'Modern & Improvisation', tag: 'Continuing', desc: 'A deeper study of modern dance principles, with improvisation explored through structure, music and inspiration.' },
+          { name: 'Lyrical', tag: 'All levels', desc: 'The fluidity of ballet with the dynamic movement of jazz, focused on storytelling and musical interpretation.' },
+          { name: 'Hip-Hop Basics', tag: 'Beginner', desc: 'Strong rhythms and techniques like popping, locking and breaking. Full-body, rhythmic and percussive.' }
+        ]}
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

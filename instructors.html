@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Instructors | Dance Bochette · Fort Myers</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f6f1ea;color:#231a1c;font-family:'Hanken Grotesk',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#5c1525;text-decoration:none}
+a:hover{color:#231a1c}
+*{box-sizing:border-box;font-optical-sizing:none}
+</style>
+</helmet>
+<div id="top" style="min-height:100vh;background:#f6f1ea">
+<dc-import name="SiteHeader" active="instructors" style="position:sticky;top:0;z-index:20" hint-size="100%,82px"></dc-import>
+
+<section style="max-width:1320px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(20px,4vw,48px) clamp(40px,5vw,72px);display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;align-items:center;gap:14px;font-size:13px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:#5c1525"><span style="width:40px;height:1px;background:#5c1525"></span>Faculty</div>
+<h1 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(48px,7vw,104px);line-height:0.96;letter-spacing:-0.025em;max-width:14ch;text-wrap:balance">Taught by <em style="color:#5c1525">dancers.</em></h1>
+</section>
+
+<section style="background:#efe7dc;border-top:1px solid #e3d9cd;border-bottom:1px solid #e3d9cd">
+<div style="max-width:1320px;margin:0 auto;padding:clamp(56px,8vw,112px) clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(36px,6vw,88px);align-items:center">
+<img src="https://www.dancebochette.com/wp-content/uploads/2026/01/bochette-JB.jpg" alt="Jeanne Bochette" style="width:100%;max-width:440px;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:220px 220px 4px 4px;background:#e3d9cd;filter:grayscale(1) contrast(1.06);">
+<div style="display:flex;flex-direction:column;gap:20px">
+<span style="font-size:13px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:#5c1525">Founder · 1951</span>
+<h2 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(40px,4.6vw,64px);line-height:1">Jeanne Bochette</h2>
+<p style="margin:0;font-family:'Bodoni Moda',serif;font-style:italic;font-size:clamp(20px,1.8vw,26px);line-height:1.4;color:#231a1c">Called "the Dancer's Teacher," her belief in blending dance with each student's goals in life continues in our school.</p>
+<p style="margin:0;font-size:16px;line-height:1.75;color:#231a1c;max-width:60ch;text-wrap:pretty">Her career encompassed New York shows, Ballet Royal, study in the USA and England, and certification in the Cecchetti Ballet System, Tap and Jazz. She received Lifetime Achievement awards from Florida Dance Masters, the Florida Dance Association and Rollins College, and the Alliance "Angel of the Arts" awards for Lifetime Achievement and Teacher of the Year, and was honored as a "Grand Dame" in 2010.</p>
+</div>
+</div>
+</section>
+
+<section style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,128px) clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(56px,7vw,96px)">
+<sc-for list="{{ faculty }}" as="f" hint-placeholder-count="6">
+<article style="display:grid;grid-template-columns:minmax(180px,300px) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:start;border-top:1px solid #d6c9ba;padding-top:clamp(32px,4vw,48px)">
+<img src="{{ f.img }}" alt="{{ f.name }}" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:4px;background:#e3d9cd;filter:grayscale(1) contrast(1.06);">
+<div style="display:flex;flex-direction:column;gap:16px">
+<h3 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(30px,3vw,44px);line-height:1.05">{{ f.name }}</h3>
+<span style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#5c1525">{{ f.role }}</span>
+<p style="margin:0;font-size:16px;line-height:1.75;color:#231a1c;max-width:64ch;text-wrap:pretty">{{ f.bio }}</p>
+</div>
+</article>
+</sc-for>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const u = 'https://www.dancebochette.com/wp-content/uploads/';
+    return {
+      faculty: [
+        { name: 'Alyce Bochette', role: 'Director', img: u + '2026/03/alyce-819x1024.jpeg', bio: 'Alyce began her studies under her mother, Jeanne Bochette, continuing with Oleg Briansky, Thomas Armour, Jean Spear and, in England, Nesta Brooking. A scholarship student at the Joffrey School and Ron Forella Jazz, she earned a B.F.A. in Dance from NYU Tisch School of the Arts. She has performed, toured and taught internationally with Rachel Lampert, May O\u2019Donnell, Doug Varone and the Mark Morris Dance Group, and has appeared on Bravo, CBS Cable and A&E. She has served on the modern faculty of USF, CLCA and Florida Dance Masters, teaches Core Dynamics Pilates, and holds Cecchetti Ballet certification. Her premiere of \u201cSalvage\u201d at the Sidney & Berne Davis Art Center played to a standing-room-only house in 2010.' },
+        { name: 'Jill Guenther', role: 'Associate · Ballet, Tap, Jazz', img: u + '2026/03/jill-819x1024.jpeg', bio: 'Jill began dancing under her mother, June Voelker, in Buffalo, NY, and became the youngest member of the Buffalo Ballet, where she was chosen to perform with the Bolshoi Ballet on its New York tour. In Florida she joined Florida Ballet Arts, the Imperial Society of Teachers of Dancing and Florida Dance Masters, and formerly owned Ballet Center of Sarasota. Ms. Jill has been on our faculty for over 40 years.' },
+        { name: 'Jennifer Reed', role: 'Associate · Ballet', img: u + '2026/03/jennifer-819x1024.jpeg', bio: 'A storyteller in words and movement, Jennifer teaches teen dancers with an emphasis on the artistry of ballet and creates new choreography that challenges students while showcasing their strengths. She is Editorial Director for Naples Botanical Garden and a longtime Southwest Florida journalist, and has been on our faculty since 2003.' },
+        { name: 'Eddy Borges', role: 'Contemporary · Ballet', img: u + '2026/03/eddy-819x1024.jpeg', bio: 'Born in Cuba, Eddy danced with and choreographed for Ballet de Camag\u00fcey, was Principal Dancer of Ballet Centro de Artes of Guayaquil and Primer Bailar\u00edn of Ballet Nacional of Ecuador, and later joined the San Antonio Ballet. He has trained and coached at schools in Cuba, Ecuador and Texas, and joined our faculty in 2022.' },
+        { name: 'Samantha Vos', role: 'Lyrical · Tap · Jazz · Ballet Assistant', img: u + '2025/12/2024-Sam-738x1024.png', bio: 'A Cypress Lake Center for the Arts dance graduate and featured CLCA choreographer, Samantha attended the American Dance Festival Summer Intensive on scholarship and performed in the award-winning \u201cFuture Perfect\u201d at the inaugural Fort Myers Fringe Festival. She joined our faculty in 2021, bringing precision in tap, expressiveness in lyrical, and plenty of funk to hip-hop.' },
+        { name: 'Gloria Hanneken', role: 'Creative Dance · Modern Assistant', img: u + '2026/03/gloria-819x1024.jpeg', bio: 'Gloria joined Dance Bochette at four years old and grew from pre-ballet through tap, modern, acrobatics, jazz and contemporary before joining the faculty in 2025. Featured at Florida Dance Masters, RISE Symposium and YAGP, with intensives at The Joffrey Ballet School and Sarasota Ballet, she now shares her love of dance with our youngest dancers and our modern classes.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

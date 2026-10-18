@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Contact | Dance Bochette · Fort Myers</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f6f1ea;color:#231a1c;font-family:'Hanken Grotesk',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#5c1525;text-decoration:none}
+a:hover{color:#231a1c}
+*{box-sizing:border-box;font-optical-sizing:none}
+input,textarea{font:inherit}
+</style>
+</helmet>
+<div id="top" style="min-height:100vh;background:#f6f1ea">
+<dc-import name="SiteHeader" active="contact" style="position:sticky;top:0;z-index:20" hint-size="100%,82px"></dc-import>
+
+<section style="max-width:1320px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(20px,4vw,48px) clamp(64px,9vw,128px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(48px,7vw,104px);align-items:start">
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;align-items:center;gap:14px;font-size:13px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:#5c1525"><span style="width:40px;height:1px;background:#5c1525"></span>Contact</div>
+<h1 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(48px,7vw,100px);line-height:0.96;letter-spacing:-0.025em">We'd love <em style="color:#5c1525">to hear from you.</em></h1>
+<p style="margin:0;font-size:17px;line-height:1.75;color:#231a1c;max-width:44ch">Questions about classes, registration or performances? Send a note or call the studio.</p>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;border-top:1px solid #231a1c;padding-top:28px;font-size:16px;line-height:1.65">
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#4a3d3e">Studio</span><span>2265 Widman Way<br>Fort Myers, FL 33901</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#4a3d3e">Phone</span><a href="tel:2393343274" style="color:#231a1c">(239) 334-3274</a></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#4a3d3e">Email</span><a href="mailto:info@dancebochette.com" style="color:#231a1c">info@dancebochette.com</a></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#4a3d3e">Register</span><a href="https://app.gostudiopro.com/online/dancebochette" style="color:#5c1525">Parent Portal →</a></div>
+</div>
+</div>
+
+<div style="background:#efe7dc;border-radius:4px;padding:clamp(28px,4vw,52px)">
+<sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:16px;padding:40px 0">
+<h2 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:40px">Thank you.</h2>
+<p style="margin:0;font-size:17px;line-height:1.7;color:#231a1c">Your message has been sent. We'll be in touch shortly.</p>
+</div>
+</sc-if>
+<sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+<form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:22px">
+<h2 style="margin:0 0 4px;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(28px,2.6vw,36px)">Send a message</h2>
+<label style="display:flex;flex-direction:column;gap:8px;font-size:13px;letter-spacing:0.08em;color:#231a1c">Your name<input required="required" style="background:#f6f1ea;border:1px solid #d6c9ba;border-radius:2px;padding:14px 16px;font-size:16px;color:#231a1c;outline-color:#5c1525"></label>
+<label style="display:flex;flex-direction:column;gap:8px;font-size:13px;letter-spacing:0.08em;color:#231a1c">Email<input type="email" required="required" style="background:#f6f1ea;border:1px solid #d6c9ba;border-radius:2px;padding:14px 16px;font-size:16px;color:#231a1c;outline-color:#5c1525"></label>
+<label style="display:flex;flex-direction:column;gap:8px;font-size:13px;letter-spacing:0.08em;color:#231a1c">Subject<input style="background:#f6f1ea;border:1px solid #d6c9ba;border-radius:2px;padding:14px 16px;font-size:16px;color:#231a1c;outline-color:#5c1525"></label>
+<label style="display:flex;flex-direction:column;gap:8px;font-size:13px;letter-spacing:0.08em;color:#231a1c">Message<textarea rows="5" style="background:#f6f1ea;border:1px solid #d6c9ba;border-radius:2px;padding:14px 16px;font-size:16px;color:#231a1c;resize:vertical;outline-color:#5c1525"></textarea></label>
+<button type="submit" style="align-self:flex-start;font:inherit;font-size:15px;font-weight:500;background:#5c1525;color:#f6f1ea;border:none;padding:16px 32px;border-radius:999px;cursor:pointer" style-hover="background:#231a1c">Send message</button>
+</form>
+</sc-if>
+</div>
+</section>
+
+<section style="border-top:1px solid #e3d9cd">
+<iframe title="Map to Dance Bochette" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3566.265755171416!2d-81.86964932364864!3d26.639972276810916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88db41e1f1a1c9d5%3A0x12d90324b357297c!2s2265%20Widman%20Way%2C%20Fort%20Myers%2C%20FL%2033901%2C%20USA!5e0!3m2!1sen!2sus!4v1770660968116!5m2!1sen!2sus" style="display:block;width:100%;height:420px;border:0;filter:grayscale(0.85) sepia(0.15)" loading="lazy"></iframe>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sent: false };
+  renderVals() {
+    return {
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      submit: e => { e.preventDefault(); this.setState({ sent: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

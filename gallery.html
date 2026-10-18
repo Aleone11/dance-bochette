@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Gallery | Dance Bochette · Fort Myers</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f6f1ea;color:#231a1c;font-family:'Hanken Grotesk',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#5c1525;text-decoration:none}
+a:hover{color:#231a1c}
+*{box-sizing:border-box;font-optical-sizing:none}
+</style>
+</helmet>
+<div id="top" style="min-height:100vh;background:#f6f1ea">
+<dc-import name="SiteHeader" active="gallery" style="position:sticky;top:0;z-index:20" hint-size="100%,82px"></dc-import>
+
+<section style="max-width:1320px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(20px,4vw,48px) clamp(32px,4vw,56px);display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;align-items:center;gap:14px;font-size:13px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:#5c1525"><span style="width:40px;height:1px;background:#5c1525"></span>Gallery</div>
+<h1 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(48px,7vw,104px);line-height:0.96;letter-spacing:-0.025em">From the <em style="color:#5c1525">studio &amp; stage.</em></h1>
+</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+<sc-if value="{{ f.on }}" hint-placeholder-val="{{ false }}"><button onClick="{{ f.pick }}" style="font:inherit;font-size:14px;background:#231a1c;color:#f6f1ea;border:1px solid #231a1c;padding:9px 18px;border-radius:999px;cursor:pointer">{{ f.label }}</button></sc-if>
+<sc-if value="{{ f.off }}" hint-placeholder-val="{{ true }}"><button onClick="{{ f.pick }}" style="font:inherit;font-size:14px;background:transparent;color:#231a1c;border:1px solid #d6c9ba;padding:9px 18px;border-radius:999px;cursor:pointer" style-hover="border-color:#231a1c">{{ f.label }}</button></sc-if>
+</sc-for>
+</div>
+</section>
+
+<section style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px) clamp(64px,9vw,128px)">
+<div style="columns:4 220px;column-gap:16px">
+<sc-for list="{{ photos }}" as="p" hint-placeholder-count="9">
+<figure onClick="{{ p.open }}" style="margin:0 0 16px;break-inside:avoid;cursor:zoom-in;display:flex;flex-direction:column;gap:8px">
+<img src="{{ p.src }}" alt="{{ p.cap }}" style="width:100%;display:block;border-radius:4px;background:#e3d9cd;filter:grayscale(1) contrast(1.06);">
+<figcaption style="font-family:'Bodoni Moda',serif;font-style:italic;font-size:14px;color:#4a3d3e">{{ p.cap }}</figcaption>
+</figure>
+</sc-for>
+</div>
+</section>
+
+<sc-if value="{{ hasOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ close }}" style="position:fixed;inset:0;z-index:50;background:rgba(35,26,28,0.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:40px;cursor:zoom-out">
+<img src="{{ open.src }}" alt="{{ open.cap }}" style="max-width:100%;max-height:82vh;object-fit:contain;display:block;border-radius:2px">
+<span style="font-family:'Bodoni Moda',serif;font-style:italic;font-size:18px;color:#e9dfd2">{{ open.cap }}</span>
+</div>
+</sc-if>
+
+<dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { filter: 'All', open: null };
+  renderVals() {
+    const u = 'https://www.dancebochette.com/wp-content/uploads/';
+    const all = [
+      { src: u + '2026/09/Students-perform-Sleeping-Beauty-2025.jpeg', cap: 'Sleeping Beauty, 2025', t: 'Stage' },
+      { src: u + '2026/02/Sisters-Gloria-and-Kenzie-caught-midflight.jpeg', cap: 'Gloria & Kenzie, caught midflight', t: 'Studio' },
+      { src: u + '2026/02/AllCast2019-Midsummer.jpg', cap: 'A Midsummer Night\u2019s Dream, full cast', t: 'Stage' },
+      { src: u + '2026/09/MomTeaching.jpg', cap: 'Jeanne Bochette teaching', t: 'Legacy' },
+      { src: u + '2026/03/VIBE-1.jpg', cap: 'VIBE!, 2021', t: 'Stage' },
+      { src: u + '2026/09/Dance-Team-members-pose-with-choreographer-Dina-Tigeleiro-.jpeg', cap: 'Dance Team with choreographer Dina Tigeleiro', t: 'Studio' },
+      { src: u + '2026/03/Dreams-teen-brainstorming.jpeg', cap: 'Dreams \u2014 teens in rehearsal', t: 'Studio' },
+      { src: u + '2026/03/Santa-Parade-2016.jpg', cap: 'Santa Parade, 2016', t: 'Community' },
+      { src: u + '2026/02/Copeland-Suite_-2023.jpeg', cap: 'Copp\u00e9lia, 2023', t: 'Stage' },
+      { src: u + '2026/03/WithStudents2-1024x730.jpg', cap: 'Jeanne with students', t: 'Legacy' },
+      { src: u + '2026/03/EdisonParade2017.jpg', cap: 'Edison Parade, 2017', t: 'Community' },
+      { src: u + '2026/03/HipHop12017.jpg', cap: 'Hip-hop, 2017', t: 'Studio' },
+      { src: u + '2026/09/Group.jpeg', cap: 'Company portrait', t: 'Studio' },
+      { src: u + '2026/03/Alice-in-Wonderland-2015.jpeg', cap: 'Alice\u2019s Adventures', t: 'Stage' },
+      { src: u + '2026/03/Leading-Orange-Bowl-Parade.jpg', cap: 'Leading the Orange Bowl Parade', t: 'Community' }
+    ];
+    const f = this.state.filter;
+    const photos = all.filter(p => f === 'All' || p.t === f).map(p => ({ ...p, open: () => this.setState({ open: p }) }));
+    const filters = ['All', 'Stage', 'Studio', 'Community', 'Legacy'].map(label => ({ label, on: label === f, off: label !== f, pick: () => this.setState({ filter: label }) }));
+    return { photos, filters, open: this.state.open || {}, hasOpen: !!this.state.open, close: () => this.setState({ open: null }) };
+  }
+}
+</script>
+</body>
+</html>

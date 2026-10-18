@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>About Us | Dance Bochette · Dance Classes for All Ages in Fort Myers</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f6f1ea;color:#231a1c;font-family:'Hanken Grotesk',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#5c1525;text-decoration:none}
+a:hover{color:#231a1c}
+*{box-sizing:border-box;font-optical-sizing:none}
+</style>
+</helmet>
+<div id="top" style="min-height:100vh;background:#f6f1ea">
+<dc-import name="SiteHeader" active="about" style="position:sticky;top:0;z-index:20" hint-size="100%,82px"></dc-import>
+
+<section style="max-width:1320px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(20px,4vw,48px) clamp(40px,5vw,72px);display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;align-items:center;gap:14px;font-size:13px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:#5c1525"><span style="width:40px;height:1px;background:#5c1525"></span>About the studio</div>
+<h1 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(48px,7vw,104px);line-height:0.96;letter-spacing:-0.025em;max-width:14ch;text-wrap:balance">A family studio, <em style="color:#5c1525">three generations</em> strong.</h1>
+</section>
+
+<section style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px) clamp(64px,9vw,128px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);align-items:start">
+<img src="https://www.dancebochette.com/wp-content/uploads/2026/03/WithStudents2-1024x730.jpg" alt="Jeanne Bochette with students" style="width:100%;max-width:440px;justify-self:center;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:4px;background:#e3d9cd;filter:grayscale(1) contrast(1.06);">
+<div style="display:flex;flex-direction:column;gap:22px;font-size:17px;line-height:1.75;color:#231a1c">
+<p style="margin:0;font-family:'Bodoni Moda',serif;font-size:clamp(22px,2vw,28px);line-height:1.45;color:#231a1c;text-wrap:pretty">Norma Jeanne (Thaggard) Bochette spent her earliest years dancing barefoot along the dirt roads of 1930s Fort Myers.</p>
+<p style="margin:0;text-wrap:pretty">As a teen she won state championships in swimming and diving, and became the first girl in Florida history to lead a high school marching band as drum major. At Rollins College she formed a campus dance team — and met L.D. Bochette, Gainesville's football captain.</p>
+<p style="margin:0;text-wrap:pretty">After graduation the couple moved to New York: L.D. drafted by the New York Giants, Jeanne dancing with the Rockettes at Radio City Music Hall. The Korean War changed their plans.</p>
+</div>
+</section>
+
+<section style="background:#efe7dc;border-top:1px solid #e3d9cd;border-bottom:1px solid #e3d9cd">
+<div style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,128px) clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(36px,5vw,56px)">
+<h2 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(36px,4.4vw,60px);line-height:1.04;letter-spacing:-0.02em">Seventy-five years, <em style="color:#5c1525">in brief.</em></h2>
+<div style="border-top:1px solid #231a1c">
+<sc-for list="{{ timeline }}" as="t" hint-placeholder-count="5">
+<div style="display:grid;grid-template-columns:minmax(120px,0.5fr) minmax(0,1fr) minmax(0,1.6fr);gap:clamp(16px,3vw,40px);padding:30px 0;border-bottom:1px solid #d6c9ba;align-items:baseline">
+<span style="font-family:'Bodoni Moda',serif;font-size:clamp(30px,3vw,42px);line-height:1;color:#5c1525">{{ t.year }}</span>
+<span style="font-family:'Bodoni Moda',serif;font-size:clamp(20px,1.8vw,24px);line-height:1.25">{{ t.title }}</span>
+<span style="font-size:16px;line-height:1.7;color:#231a1c;text-wrap:pretty">{{ t.text }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,128px) clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="font-size:13px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:#5c1525">Our approach</div>
+<h2 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(36px,4.4vw,60px);line-height:1.04;letter-spacing:-0.02em;text-wrap:balance">A lifetime love <em style="color:#5c1525">of the art.</em></h2>
+<p style="margin:0;font-size:17px;line-height:1.75;color:#231a1c;text-wrap:pretty">Our training focuses on technical, artistic, and personal development in a supportive, nurturing environment. We place as much emphasis on the development of dancers' characters as we do on the characters they play on stage.</p>
+<p style="margin:0;font-size:17px;line-height:1.75;color:#231a1c;text-wrap:pretty">Year-end performances are carefully curated, with well-defined themes and frequent guest artists and choreographers. Supplemental experiences — Florida Dance Masters workshops and selected competitions — are screened to fit our training philosophy.</p>
+</div>
+<img src="https://www.dancebochette.com/wp-content/uploads/2026/03/MomLaura-1024x682.jpg" alt="Jeanne Bochette in the studio" style="width:100%;max-width:440px;justify-self:center;aspect-ratio:3/2;object-fit:cover;display:block;border-radius:4px;background:#e3d9cd;filter:grayscale(1) contrast(1.06);">
+</section>
+
+<section style="background:#231a1c;color:#f6f1ea">
+<div style="max-width:1000px;margin:0 auto;padding:clamp(64px,9vw,128px) clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:28px;align-items:center;text-align:center">
+<p style="margin:0;font-family:'Bodoni Moda',serif;font-style:italic;font-size:clamp(28px,3.4vw,46px);line-height:1.3;text-wrap:balance">"We serve generations of families — a testament to our studio's strength."</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+<a href="classes.html" style="background:#f6f1ea;color:#231a1c;padding:16px 30px;border-radius:999px;font-weight:500;font-size:15px" style-hover="background:#c9a86a;color:#231a1c">Explore classes</a>
+<a href="instructors.html" style="border:1px solid #f6f1ea;color:#f6f1ea;padding:16px 30px;border-radius:999px;font-weight:500;font-size:15px" style-hover="background:#f6f1ea;color:#231a1c">Meet the faculty</a>
+</div>
+</div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      timeline: [
+        { year: '1951', title: 'A dance school from a machine shop', text: 'With L.D. injured as a fighter pilot, Jeanne returned to Fort Myers and transformed a machine shop beside the railroad station into the region\u2019s first dance school — one of the area\u2019s first women-owned businesses. No bank would lend to her, so she traded classes for goods.' },
+        { year: '1950s–', title: 'A pillar of the arts', text: 'Jeanne became a founding member of The Community Concert Series, served on the boards of the Southwest Florida Symphony and the Lee County Alliance for the Arts, and founded the nonprofit Gulfcoast Dance Inc.' },
+        { year: 'Return', title: 'The next generation', text: 'Her daughter Alyce Bochette performed internationally with the May O\u2019Donnell Concert Dance Company and the Mark Morris Dance Group before returning to lead the studio where she learned her first steps.' },
+        { year: '2026', title: 'The 75th season', text: 'Still family-owned, Dance Bochette pairs the warmth and excellence of its founding with a faculty that keeps evolving with the art form.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
